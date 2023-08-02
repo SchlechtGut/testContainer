@@ -14,7 +14,7 @@ public class TestingContainerApplication {
     public DataSource getDataSource() {
         DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("org.postgresql.Driver");
-        dataSourceBuilder.url("jdbc:postgresql://localhost/userDB");
+        dataSourceBuilder.url("jdbc:postgresql://localhost/aston");
         dataSourceBuilder.username("aston");
         dataSourceBuilder.password("aston");
         return dataSourceBuilder.build();

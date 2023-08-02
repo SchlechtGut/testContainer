@@ -1,6 +1,5 @@
 package com.example.testingcontainer;
 
-
 import com.example.testingcontainer.dao.UserRepository;
 import com.example.testingcontainer.model.User;
 import org.junit.jupiter.api.Assertions;
@@ -14,9 +13,10 @@ import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
 
-@SpringBootTest
 @Testcontainers
+@SpringBootTest
 class TestContanerApplicationTests {
+
 	@Autowired
 	UserRepository userRepository;
 
@@ -37,7 +37,8 @@ class TestContanerApplicationTests {
 	@Test
 	void test1() {
 		User user = new User("New");
-		userRepository.save(user);
+		userRepository.saveAndFlush(user);
+
 
 		Assertions.assertEquals(user, userRepository.findById(user.getId()).get());
 	}

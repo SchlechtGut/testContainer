@@ -3,8 +3,10 @@ package com.example.testingcontainer.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "myuser")
 public class User {
     @Id
     @GeneratedValue
@@ -39,4 +41,6 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+
 }
